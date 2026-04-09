@@ -6,6 +6,7 @@ app = FastAPI()
 
 data = {
     "Marks" : random.sample(range(100),10) 
+
 }
 
 @app.get("/")
