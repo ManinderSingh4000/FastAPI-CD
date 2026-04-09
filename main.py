@@ -1,9 +1,12 @@
 from fastapi import FastAPI
 import numpy as np
+import random
 
 app = FastAPI()
 
-arr = np.array([10,20,40,30,70])
+data = {
+    "Marks" : random.sample(range(100),10) 
+}
 
 @app.get("/")
 def index():
@@ -11,5 +14,5 @@ def index():
 
 @app.get("/check")
 def show_array():
-    return {"Array" : arr }
+    return data
     
